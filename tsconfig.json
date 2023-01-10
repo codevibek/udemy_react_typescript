@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "es6",
+        "strict": true,
+       "noEmit": true,
+       "isolatedModules":true,
+       "esModuleInterop": true,
+       "skipLibCheck": true,
+       "jsx":"preserve",
+       "sourceMap": true,
+       "moduleResolution": "Node",
+       "resolveJsonModule": true,
+       "plugins":[{"name":"typescript-plugin-css-modules"}]
+
+    },
+    "include": ["./src/**/*"],
+    
+}
