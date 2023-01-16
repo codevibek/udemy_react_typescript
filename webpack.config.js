@@ -15,7 +15,19 @@ module.exports={
         },{
             test:/\.css$/,
             use:[MiniCssExtractPlugin.loader ,{loader:"css-loader"}]
-        }]
+        },
+        {
+            test:/\.svg$/,
+            loader:"@svgr/webpack",
+            options:{
+                svgoCongif:{
+                    plugins:{
+                        removeViewBox:false,
+                    }
+                }
+            }
+        },
+    ]
     },
     plugins:[
 
