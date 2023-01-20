@@ -1,8 +1,6 @@
 export interface Pizza {
-    id:number;
-    name:string;
-}
-
-interface Props{
-    pizza:Pizza;
+  id: number;
+  name: string;
+  description: string;
+  price: number;
 }
