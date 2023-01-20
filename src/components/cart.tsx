@@ -1,6 +1,6 @@
 import React from "react"
 import CartCss from "./Cart.module.css"
-import { AppSetStateContext, AppStateContext } from "./AppState";
+import {  AppStateContext } from "./AppState";
 
 interface Props {}
 
@@ -25,7 +25,9 @@ class Cart extends React.Component<Props,State>{
     render(): React.ReactNode {
         return(
             <AppStateContext.Consumer>{(state)=>{
-
+const itemCount = state.cart.items.reduce((sum,item)=>{
+    return sum+item.quantity;
+},0)
                 return(
                     <div className={CartCss.cartContainer}>
                 <button type="button" className={CartCss.button} onClick={this.handleClick}>
@@ -33,14 +35,9 @@ class Cart extends React.Component<Props,State>{
                     {state.cart.items.length} pizzas</button>
                 <div className={CartCss.cartDropDowm} style={{display:this.state.isOpen ?"block":"none"}}>
                     <ul>
-                        <li>
-                            Napoletana
-                        </li>
-                        <li>
-                            Marinara
-                        </li>
+                       
                         {state.cart.items.map(item=>{
-                            return(<li key={item.id}>{item.name}</li>)
+                            return(<li key={item.id}>{item.name} &times; {item.quantity}</li>)
                         })}
                     </ul>
                 </div>

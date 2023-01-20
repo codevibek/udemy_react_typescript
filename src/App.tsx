@@ -5,6 +5,7 @@ import AppCSS from "./App.module.css"
 import PizzaSVG from "./svg/pizza.svg"
 import Cart from "./components/cart"
 import AppStateProvider from "./components/AppState"
+import SpecialOffer from "./components/SpecialOffer"
 const App = () => {
     return (
       <AppStateProvider>
@@ -12,6 +13,7 @@ const App = () => {
       <div className={AppCSS.container}>
         <PizzaSVG width={120} height={120}/>
         <Cart/>
+        <SpecialOffer pizza={{id:5,name:"carpese"}}/>
         <ul>
             {pizzas.map(pizza=>{
               return(
